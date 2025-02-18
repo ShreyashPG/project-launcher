@@ -1,0 +1,23 @@
+{
+    "name": "project-launcher",
+    "version": "1.0.1",
+    "description": "Generate project folder structures for various frameworks (React, Vue, Next.js, Nuxt, Express, TypeScript, etc.)",
+    "main": "index.js",
+    "bin": {
+      "project-launcher": "./cli.js"
+    },
+    "scripts": {
+      "test": "echo \"No tests specified\" && exit 0"
+    },
+    "dependencies": {
+      "inquirer": "^8.2.0",
+      "chalk": "^4.1.2",
+      "fs-extra": "^10.0.0"
+    },
+    "devDependencies": {
+      "commander": "^8.3.0"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  

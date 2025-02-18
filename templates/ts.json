@@ -1,0 +1,18 @@
+{
+    "packageJson": {
+      "name": "typescript-project",
+      "version": "1.0.0",
+      "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js"
+      },
+      "devDependencies": {
+        "typescript": "^4.0.0"
+      }
+    },
+    "configFiles": {
+      "tsconfig.json": "{ \"compilerOptions\": { \"outDir\": \"dist\", \"module\": \"CommonJS\" } }",
+      "README.md": "# TypeScript Project\nGenerated with project-structure-cli"
+    }
+  }
+  
