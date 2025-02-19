@@ -1,7 +1,7 @@
 
-# Project Structure Generator
+# Project Launcher
 
-A command-line tool to generate folder structures for various types of projects, including frontend and backend frameworks such as **React**, **Next.js**, **Vue**, **Nuxt**, **Express**, and **TypeScript**. 
+A command-line tool to generate folder structures for various types of projects, including frontend and backend frameworks such as **React**, **Next.js**, **Vue**, **Nuxt**, **Express**, **TypeScript** and **Angular**. 
 
 This tool helps you quickly set up the initial structure for your projects, including necessary configuration files like `package.json`, `.gitignore`, and others, based on the selected template.
 
@@ -9,7 +9,7 @@ This tool helps you quickly set up the initial structure for your projects, incl
 
 ## Features
 
-- Generates **project folder structures** for multiple frameworks like React, Vue, Next.js, Nuxt, Express, and TypeScript.
+- Generates **project folder structures** for multiple frameworks like React, Vue, Next.js, Nuxt, Express, TypeScript and Angular.
 - Provides **default configuration files** (like `package.json`, `.gitignore`, `README.md`) to get you started right away.
 - Supports **custom templates** to extend and modify project types.
 - Offers an **interactive CLI** to guide you through selecting the project type and providing project details.
@@ -19,10 +19,10 @@ This tool helps you quickly set up the initial structure for your projects, incl
 
 ## Installation
 
-To install `project-structure-generator`, you can use npm:
+To install `project-launcher`, you can use npm:
 
 ```bash
-npm install -g project-structure-generator
+npm install -g project-launcher
 ```
 
 This will install the CLI tool globally on your system.
@@ -34,12 +34,12 @@ This will install the CLI tool globally on your system.
 Once installed, you can generate project folder structures by running the following command:
 
 ```bash
-project-structure
+npx project-launcher
 ```
 
 You will be prompted to:
 
-1. **Select the type of project**: Choose from frameworks like **React**, **Next.js**, **Vue**, **Nuxt**, **Express**, **TypeScript**, and more.
+1. **Select the type of project**: Choose from frameworks like **React**, **Next.js**, **Vue**, **Nuxt**, **Express**, **TypeScript**,, **Angular**, and more.
 2. **Provide a project name**: Enter the name for your new project (e.g., `my-react-app`).
 3. The package will then generate the project structure in the current working directory.
 
@@ -54,7 +54,8 @@ Here are the supported templates you can choose from:
 - **Vue**
 - **Nuxt**
 - **Express**
-- **TypeScript** (for general TypeScript-based projects)
+- **TypeScript** 
+- **Angular**   
 
 Each template generates a specific folder structure and includes common configuration files like `package.json`, `.gitignore`, and `README.md`.
 

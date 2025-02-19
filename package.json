@@ -1,8 +1,8 @@
 {
     "name": "project-launcher",
-    "version": "1.0.1",
-    "description": "Generate project folder structures for various frameworks (React, Vue, Next.js, Nuxt, Express, TypeScript, etc.)",
-    "main": "index.js",
+    "version": "2.0.0",
+    "description": "Generate project folder structures for various frameworks (React, Vue, Next.js, Nuxt, Express, TypeScript, Angular etc.)",
+    "main": "cli.js",
     "bin": {
       "project-launcher": "./cli.js"
     },
@@ -17,7 +17,7 @@
     "devDependencies": {
       "commander": "^8.3.0"
     },
-    "author": "Your Name",
+    "author": "Shreyash Ghanekar <https://secret-pass-pm8vv3cxb-shreyashpgs-projects.vercel.app/>",
     "license": "MIT"
   }
   
