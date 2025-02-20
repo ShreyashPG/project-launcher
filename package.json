@@ -1,6 +1,6 @@
 {
     "name": "project-launcher",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "Generate project folder structures for various frameworks (React, Vue, Next.js, Nuxt, Express, TypeScript, Angular etc.)",
     "main": "cli.js",
     "bin": {

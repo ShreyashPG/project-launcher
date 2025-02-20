@@ -6,17 +6,17 @@ const fs = require("fs-extra");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const templates = {
-  react: require("./templates/react.json"),
-  next: require("./templates/next.json"),
-  vue: require("./templates/vue.json"),
-  nuxt: require("./templates/nuxt.json"),
-  express: require("./templates/express.json"),
-  ts: require("./templates/ts.json"),
-  angular: require("./templates/angularr.json"),
-};
+const templates = [
+  "react",
+  "next",
+  "vue",
+  "nuxt",
+  "express",
+  "react+ts",
+  "angular",
+];
 
-const projectTypes = Object.keys(templates);
+const projectTypes = Object.values(templates);
 
 const askQuestions = async () => {
   const { projectType } = await inquirer.prompt([
@@ -41,6 +41,7 @@ const askQuestions = async () => {
   generateProjectStructure(projectType, projectName);
 };
 
+
 const generateProjectStructure = (projectType, projectName) => {
   const projectDir = path.join(process.cwd(), projectName);
 
@@ -50,7 +51,12 @@ const generateProjectStructure = (projectType, projectName) => {
     return;
   }
 
-  fs.ensureDirSync(projectDir);
+  if (projectType === "react") {
+    console.log(chalk.yellow("📦 Initializing React project..."));
+    execSync(`npx create-react-app ${projectName}`, { stdio: "inherit", cwd: process.cwd() });
+    console.log(chalk.green("✅ React project created successfully."));
+    return;
+  }
 
   if (projectType === "angular") {
     console.log(chalk.yellow("📦 Initializing Angular project..."));
@@ -59,28 +65,47 @@ const generateProjectStructure = (projectType, projectName) => {
     return;
   }
 
-  const template = templates[projectType];
+  if (projectType === "nuxt") {
+    console.log(chalk.yellow("📦 Initializing Nuxt.js project..."));
+    execSync(`npx nuxi@latest init ${projectName}`, { stdio: "inherit", cwd: process.cwd() });
+    console.log(chalk.green("✅ Nuxt.js project created successfully."));
+    return;
+  }
 
-  // Create package.json
-  fs.writeJsonSync(path.join(projectDir, "package.json"), template.packageJson, { spaces: 2 });
-
-  // Create configuration files
-  for (const [file, content] of Object.entries(template.configFiles)) {
-    const filePath = path.join(projectDir, file);
-    fs.ensureFileSync(filePath);
-    fs.writeFileSync(filePath, content);
+  if (projectType === "next") {
+    console.log(chalk.yellow("📦 Initializing Next.js project..."));
+    execSync(`npx create-next-app@latest ${projectName}`, { stdio: "inherit", cwd: process.cwd() });
+    console.log(chalk.green("✅ Next.js project created successfully."));
+    return;
+  }
+  if (projectType === "vue") {
+    console.log(chalk.yellow("📦 Initializing Vue.js project..."));
+    execSync(`npx create vue@latest ${projectName}`, { stdio: "inherit", cwd: process.cwd() });
+    console.log(chalk.green("✅ Vue.js project created successfully."));
+    return;
   }
 
   if (projectType === "express") {
-    const srcDir = path.join(projectDir, "src");
-    fs.ensureDirSync(srcDir);
-
-    console.log(chalk.yellow("📦 Setting up Express.js project..."));
-    execSync("npm install", { stdio: "inherit", cwd: projectDir });
-    console.log(chalk.green("✅ Express project created successfully."));
+    console.log(chalk.yellow("📦 Initializing Express.js project..."));
+    execSync(`npx express-generator ${projectName}`, { stdio: "inherit", cwd: process.cwd() });
+    console.log(chalk.green("✅ Express.js project created successfully."));
+    return;
   }
+
+  if (projectType === "react+ts") {
+    console.log(chalk.yellow("📦 Initializing TypeScript React project..."));
+    execSync(`npx create-react-app ${projectName} --template typescript`, {
+      stdio: "inherit",
+      cwd: process.cwd(),
+    });
+    console.log(chalk.green("✅ TypeScript React project created successfully."));
+    return;
+  }
+
+  
 
   console.log(chalk.green(`\n🎉 Project ${projectName} created successfully!`));
 };
+
 
 askQuestions();

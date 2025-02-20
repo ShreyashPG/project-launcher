@@ -11,7 +11,7 @@ This tool helps you quickly set up the initial structure for your projects, incl
 
 - Generates **project folder structures** for multiple frameworks like React, Vue, Next.js, Nuxt, Express, TypeScript and Angular.
 - Provides **default configuration files** (like `package.json`, `.gitignore`, `README.md`) to get you started right away.
-- Supports **custom templates** to extend and modify project types.
+- 
 - Offers an **interactive CLI** to guide you through selecting the project type and providing project details.
 - Easy to integrate into any development setup for faster project initialization.
 
@@ -57,7 +57,7 @@ Here are the supported templates you can choose from:
 - **TypeScript** 
 - **Angular**   
 
-Each template generates a specific folder structure and includes common configuration files like `package.json`, `.gitignore`, and `README.md`.
+Each template generates a specific folder structure and includes all necessary projectfiles like `package.json`, `.gitignore` ,`src`, `public` and `README.md`.
 
 ---
 
@@ -80,22 +80,6 @@ my-react-app/
 └── README.md
 ```
 
-**`package.json`** for React:
-
-```json
-{
-  "name": "my-react-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  }
-}
-```
 
 ---
 
@@ -113,66 +97,13 @@ my-express-app/
 └── README.md
 ```
 
-**`package.json`** for Express:
-
-```json
-{
-  "name": "my-express-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
-  "dependencies": {
-    "express": "^4.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.0"
-  }
-}
-```
-
----
-
-## Extending Project Types
-
-You can **extend** this tool by adding custom templates. Templates are stored in the `templates/` folder, and you can modify or add new templates based on your preferred project structures.
-
-- To add a new template, simply create a new JSON file in the `templates/` directory following the structure of the existing ones.
-- For example, create a new `angular.json` file for generating Angular projects.
-
----
-
-## Contributing
-
-We welcome contributions! If you find any bugs, have suggestions, or want to add new templates, please feel free to open an issue or create a pull request.
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-xyz`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add feature xyz'`).
-5. Push to the branch (`git push origin feature-xyz`).
-6. Open a pull request.
-
----
 
 ## License
 
-MIT License. See the [LICENSE](LICENSE) file for more details.
+MIT License. 
 
 ---
 
-## FAQ
-
-### How do I add a new project template?
-
-To add a new template, simply create a new JSON file in the `templates/` directory. For example, if you want to add a template for **Angular**, create `angular.json` with the folder structure and configuration details.
-
-### Can I generate a custom folder structure?
-
-Yes, you can create your own custom template by modifying the `templates/` folder and adding a new template configuration in JSON format.
-
----
 
 ## Support
 
